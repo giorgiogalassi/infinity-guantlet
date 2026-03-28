@@ -6,7 +6,6 @@ const container = new Container();
 
 [Logger, ApiClient, UserService, App].forEach((Type) => {
   container.registerClass(Type, Type, {
-    lifecycle: Type === Logger ? "singleton" : "transient",
     deps: getDependencies(Type),
   });
 });

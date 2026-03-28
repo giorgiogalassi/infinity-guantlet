@@ -15,7 +15,6 @@ function runDemo() {
 
     [Logger, ApiClient, UserService, App].forEach((Type) => {
       container.registerClass(Type, Type, {
-        lifecycle: Type === Logger ? "singleton" : "transient",
         deps: getDependencies(Type),
       });
     });
@@ -36,7 +35,6 @@ function runDemo() {
       <button class="live-demo__button" @click="runDemo">
         Run in browser
       </button>
-      <span class="live-demo__hint">iPad-friendly: tap once, no terminal needed</span>
     </div>
 
     <pre class="live-demo__output"><code>{{ output || "Output will appear here." }}</code></pre>
