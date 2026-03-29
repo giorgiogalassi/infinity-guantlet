@@ -164,7 +164,10 @@ transition: slide-right
 - Classes focus on behavior while orchestration happens elsewhere.
 
 ```js
+const logger = new Logger();
+const apiClient = new ApiClient(logger);
 const userService = new UserService(apiClient);
+
 const app = new App(userService, logger);
 ```
 
@@ -260,7 +263,10 @@ transition: slide-right
 - In larger systems it is often an IoC container.
 
 ```js
+const logger = new Logger();
+const apiClient = new ApiClient(logger);
 const userService = new UserService(apiClient);
+
 const app = new App(userService, logger);
 ```
 
