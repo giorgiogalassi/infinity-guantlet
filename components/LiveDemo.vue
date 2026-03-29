@@ -30,7 +30,7 @@ function runDemo() {
 </script>
 
 <template>
-  <div class="live-demo mt-6">
+  <div class="live-demo mt-4">
     <div class="live-demo__header">
       <button class="live-demo__button" @click="runDemo">
         Run in browser
@@ -76,10 +76,9 @@ function runDemo() {
 }
 
 .live-demo__output {
-  margin: 14px 0 0;
+  margin: 8px 0 0;
   border-radius: 12px;
   padding: 14px;
-  min-height: 72px;
   white-space: pre-wrap;
   background: rgba(2, 6, 23, 0.95);
   color: #cbd5e1;

@@ -12,6 +12,5 @@ const singletonServices = new Set([App, UserService]);
   });
 });
 
-
 const app = container.resolve(App);
 console.log(app.start());
