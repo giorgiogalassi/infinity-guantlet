@@ -29,6 +29,7 @@ export class Container {
       if (!this.singletons.has(token)) {
         this.singletons.set(token, provider.factory(this));
       }
+      
       return this.singletons.get(token);
     }
 

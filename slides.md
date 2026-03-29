@@ -19,6 +19,10 @@ Goal: keep DI benefits while staying close to the platform.
 Lean Web, explicit code paths, standards-first metaprogramming.
 </div>
 
+<div class="mt-3 text-sm opacity-80">
+The runnable demo uses plain function calls to simulate decorator-applied metadata, so it stays valid JavaScript without depending on <code>@</code> syntax.
+</div>
+
 <!--
 Speaker notes:
 Not a framework war.
@@ -343,7 +347,8 @@ transition: slide-left
 
 Implication:
 
-- We can build a practical approach now using class-level metadata.
+- We can build a practical approach now using class-level metadata and current tooling.
+- Native support is improving, but not every runtime/toolchain supports the same decorator story end to end.
 - Constructor-parameter ergonomics are a likely future improvement.
 - In this demo, metadata is stored explicitly on the class, so we do not depend on a separate reflection API.
 
@@ -437,6 +442,8 @@ transition: slide-up
 <div class="mt-4 text-sm opacity-80">
 <strong class="stone-time">Time Stone</strong>: singleton vs transient controls lifetime.
 </div>
+
+- This container is intentionally didactic: it shows lookup, lifecycle, and graph resolution clearly, not every capability a production DI framework would need.
 
 <!--
 Speaker notes:
