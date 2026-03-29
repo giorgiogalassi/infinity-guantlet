@@ -190,16 +190,15 @@ graph LR
   I --> D2[Dependency B]
 ```
 
-- `Client`: the class that needs collaborators.
-- `Dependencies`: the services or resources it consumes.
-- `Injector`: the mechanism that provides those dependencies.
+- Three actors shape the flow: client, dependencies, injector.
+- The next slides unpack each role briefly, then show how they interact at runtime.
 
 <!--
 Speaker notes:
-Mental model slide.
-Client, dependencies, injector.
-That is the whole cast.
-Timing target: 1:15
+Overview slide.
+Name the three actors without teaching them in detail yet.
+Use it as a bridge into the focused slides that follow.
+Timing target: 0:45
 Transition cue: "Let us quickly unpack each role so the vocabulary sticks."
 -->
 
@@ -284,23 +283,22 @@ transition: slide-left
 ```mermaid
 graph LR
   I[Injector] --> S1[Service A]
-  I --> S2[Service B]
-  I --> S3[Service C]
+  I --> S3[Service B]
   I --> M[MyService]
-  M --> C[MyComponent]
+  M --> C[MyClass]
 ```
 
-- The injector resolves the graph before the client starts doing work.
-- The client receives ready-to-use collaborators.
-- That is why classes stay focused while composition remains centralized.
+- Once the roles are defined, the injector resolves the graph before the client starts doing work.
+- The client receives ready-to-use collaborators instead of assembling them manually.
+- This is the bridge from the conceptual model to the container implementation in the next section.
 
 <!--
 Speaker notes:
-Bridge to implementation.
-Injector resolves first; client gets ready-to-use collaborators.
-This is why classes stay focused.
+Flow slide.
+Do not redefine client, dependency, and injector here.
+Focus on runtime interaction: resolve first, then hand ready-to-use collaborators to the client.
 From here on: one Vanilla JS injector.
-Timing target: 1:20
+Timing target: 0:55
 Transition cue: "Now that the mechanics are visible, we can compress DI and IoC into one picture."
 -->
 
