@@ -163,14 +163,6 @@ transition: slide-right
 - A composition root or container decides how the graph is assembled.
 - Classes focus on behavior while orchestration happens elsewhere.
 
-```js
-const logger = new Logger();
-const apiClient = new ApiClient(logger);
-const userService = new UserService(apiClient);
-
-const app = new App(userService, logger);
-```
-
 <!--
 Speaker notes:
 IoC = control moves outward.
