@@ -6,8 +6,11 @@ export class UserService {
   listUsers() {
     return this.apiClient.fetchUsers().slice(1);
   }
+  
+  static {
+    Injectable(this, { deps: [ApiClient] });
+  }
 }
-Injectable({ deps: [ApiClient] })(UserService);
 
 export class App {
   constructor(userService, logger) {
@@ -19,5 +22,8 @@ export class App {
     const users = this.userService.listUsers().join(", ");
     return this.logger.info(`users: ${users}`);
   }
+  
+  static {
+    Injectable(this, { deps: [UserService, Logger] });
+  }
 }
-Injectable({ deps: [UserService, Logger] })(App);

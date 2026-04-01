@@ -1,10 +1,8 @@
 export const INJECT_TOKENS = Symbol("di:inject_tokens");
 
-export function Injectable({ deps = [] } = {}) {
-  return function applyInjectable(Type) {
-    Type[INJECT_TOKENS] = deps;
-    return Type;
-  };
+export function Injectable(Type, { deps = [] } = {}) {
+  Type[INJECT_TOKENS] = deps;
+  return Type;
 }
 
 export function getDependencies(Type) {
